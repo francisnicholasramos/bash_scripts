@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 sudo apt update
-sudo apt install -y curl git tmux xclip unzip tar gzip build-essential
+sudo apt install -y curl git ripgrep tmux xclip unzip tar gzip build-essential
 
 mkdir $HOME/configDir
 
