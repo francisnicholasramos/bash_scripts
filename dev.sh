@@ -36,5 +36,7 @@ tar -xf node-v24.11.1-linux-x64.tar.xz
 sudo mv node-v24.11.1-linux-x64 /usr/local/node
 
 echo ""
-echo "Don't forget to 'source .bashrc' "
-
+echo "======================================="
+echo " Don't forget to:  source ~/.bashrc "
+echo "======================================="
+echo ""
