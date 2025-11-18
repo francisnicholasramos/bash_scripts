@@ -11,10 +11,10 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
 nvm install --lts
 
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-sudo rm -rf /opt/nvim-linux64
-sudo tar -C /opt -xzf nvim-linux64.tar.gz
-sudo mv /opt/nvim-linux64 /opt/nvim
+curl -LO https://github.com/neovim/neovim/releases/download/v0.11.5/nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+sudo mv /opt/nvim-linux-x86_64 /opt/nvim
 
 grep -qxF 'export PATH="$PATH:/opt/nvim/bin"' ~/.bashrc || \
 echo 'export PATH="$PATH:/opt/nvim/bin"' >> ~/.bashrc
