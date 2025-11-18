@@ -7,11 +7,15 @@ mkdir $HOME/configDir
 
 mkdir $HOME/.config
 
+mkdir $HOME/.vim
+
 git clone https://github.com/francisnicholasramos/dotfiles.git $HOME/configDir
 
 mv ~/configDir/nvim ~/.config/
 
 mv ~/configDir/.tmux.conf ~/configDir/.vimrc ~/
+
+cp ~/.config/nvim/colors ~/.vim
 
 echo 'export PATH=/usr/local/node/bin:$PATH' >> ~/.bashrc
 
@@ -30,5 +34,5 @@ tar -xf node-v24.11.1-linux-x64.tar.xz
 sudo mv node-v24.11.1-linux-x64 /usr/local/node
 
 echo ""
-echo " Don't forget to 'source ~/.bashrc' "
+echo "Don't forget to 'source .bashrc' "
 
