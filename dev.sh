@@ -1,32 +1,25 @@
 #!/usr/bin/env bash
 
 sudo apt update
-sudo apt install -y git fzf tmux xclip curl unzip tar gzip cmake gettext lua5.1 liblua5.1-0-dev build-essential
+sudo apt install -y curl git fzf tmux xclip unzip tar gzip build-essential
 
-export NVM_DIR="$HOME/.nvm"
+echo "Installing NodeJs..."
+cd ~
+curl -LO https://nodejs.org/dist/v24.11.1/node-v24.11.1.tar.gz
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+sudo mv node-v24.11.1 /usr/local/node
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+echo 'export PATH=/usr/local/node/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
 
-nvm install --lts
+mkdir $HOME/configDir
 
-git clone -b v0.11.5 https://github.com/neovim/neovim.git $HOME/personal/neovim
+mkdir $HOME/.config
 
-cd $HOME/personal/neovim
-make CMAKE_BUILD_TYPE=RelWithDebInfo
-sudo make install
+git clone https://github.com/francisnicholasramos/dotfiles.git $HOME/configDir
 
-cd
-
-mkdir -p ~/configDir
-
-git clone https://github.com/francisnicholasramos/dotfiles.git ~/configDir
-
-mv ~/configDir/nvim/ ~/.config/
+mv ~/configDir/nvim ~/.config/
 
 mv ~/configDir/.tmux.conf ~/configDir/.vimrc ~/
-rm -rf ~/configDir
 
-sudo apt install cmake gettext lua5.1 liblua5.1-0-dev
-
+rm -rf $HOME/configDir
