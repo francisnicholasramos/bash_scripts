@@ -15,7 +15,7 @@ mv ~/configDir/nvim ~/.config/
 
 mv ~/configDir/.tmux.conf ~/configDir/.vimrc ~/
 
-cp ~/.config/nvim/colors ~/.vim
+cp -r ~/.config/nvim/colors ~/.vim
 
 echo 'export PATH=/usr/local/node/bin:$PATH' >> ~/.bashrc
 
