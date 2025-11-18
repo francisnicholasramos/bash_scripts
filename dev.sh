@@ -3,13 +3,17 @@
 sudo apt update
 sudo apt install -y curl git fzf tmux xclip unzip tar gzip build-essential
 
-echo "Installing NodeJs..."
+echo "Installing NVM..."
 cd ~
-curl -LO https://nodejs.org/dist/v24.11.1/node-v24.11.1.tar.gz
 
-sudo mv node-v24.11.1 /usr/local/node
+curl -O https://nodejs.org/dist/v24.11.1/node-v24.11.1-linux-x64.tar.xz
+
+tar -xf node-v24.11.1-linux-x64.tar.xz
+
+sudo mv node-v24.11.1-linux-x64 /usr/local/node
 
 echo 'export PATH=/usr/local/node/bin:$PATH' >> ~/.bashrc
+
 source ~/.bashrc
 
 mkdir $HOME/configDir
