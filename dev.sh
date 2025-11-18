@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 sudo apt update
-sudo apt install -y curl git fzf tmux xclip unzip tar gzip build-essential
+sudo apt install -y curl git tmux xclip unzip tar gzip build-essential
 
 mkdir $HOME/configDir
 
@@ -35,6 +35,15 @@ curl -O https://nodejs.org/dist/v24.11.1/node-v24.11.1-linux-x64.tar.xz
 tar -xf node-v24.11.1-linux-x64.tar.xz
 
 sudo mv node-v24.11.1-linux-x64 /usr/local/node
+
+echo ""
+echo "========================="
+echo " Installing FzF..."
+echo "========================="
+echo ""
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 echo ""
 echo "========================="
