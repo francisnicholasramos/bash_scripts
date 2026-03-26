@@ -2,6 +2,7 @@
 
 sudo apt update
 sudo apt install -y curl git ripgrep tmux xclip unzip tar gzip build-essential
+# sudo pacman -Sy --noconfirm curl git ripgrep tmux xclip unzip tar gzip base-devel
 
 mkdir $HOME/configDir
 
